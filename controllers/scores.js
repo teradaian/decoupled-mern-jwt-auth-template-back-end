@@ -3,6 +3,7 @@ import { Score } from '../models/score.js'
 const index = async(req, res) => {
   try{
     let result = await Score.find({})
+    result.sort((a,b) => b.score - a.score)
     return res.status(201).json(result)
   } catch (err) {
     console.log(err)
