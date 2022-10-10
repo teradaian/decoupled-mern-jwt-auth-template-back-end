@@ -35,7 +35,7 @@ const updateDown = async(req, res) => {
   }
 }
 
-const add = async(req,res) => {
+const addPlayer = async(req,res) => {
   try {
     let score = await Score.create(req.body)
     return res.status(201).json(score)
@@ -45,4 +45,4 @@ const add = async(req,res) => {
   }
 }
 
-export { index, update, updateDown, add }
+export { index, update, updateDown, addPlayer }

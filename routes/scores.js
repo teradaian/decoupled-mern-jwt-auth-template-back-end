@@ -10,7 +10,7 @@ router.put('/increment/:id', scoresCtrl.update)
 router.put('/decrement/:id', scoresCtrl.updateDown)
 
 /*---------- Protected Routes ----------*/
-router.get('/add', scoresCtrl.add)
+router.post('/add', scoresCtrl.addPlayer)
 
 
 export { router }
