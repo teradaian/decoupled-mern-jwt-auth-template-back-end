@@ -8,9 +8,9 @@ const router = Router()
 router.get('/', scoresCtrl.index)
 router.put('/increment/:id', scoresCtrl.update)
 router.put('/decrement/:id', scoresCtrl.updateDown)
+router.post('/add', scoresCtrl.addPlayer)
+router.delete('/delete/:id', scoresCtrl.removePlayer)
 
 /*---------- Protected Routes ----------*/
-router.post('/add', scoresCtrl.addPlayer)
-
 
 export { router }

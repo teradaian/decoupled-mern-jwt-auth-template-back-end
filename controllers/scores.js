@@ -45,4 +45,14 @@ const addPlayer = async(req,res) => {
   }
 }
 
-export { index, update, updateDown, addPlayer }
+const removePlayer = async(req, res) => {
+  try {
+    let deletedPlayer = await Score.findByIdAndDelete(req.params.id)
+    return res.status(201).json(deletedPlayer)
+  } catch (error) {
+    console.log(err)
+    return res.status(500).json({ err: err.message })
+  }
+}
+
+export { index, update, updateDown, addPlayer, removePlayer }
