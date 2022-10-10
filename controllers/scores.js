@@ -35,4 +35,14 @@ const updateDown = async(req, res) => {
   }
 }
 
-export { index, update, updateDown }
+const add = async(req,res) => {
+  try {
+    let score = await Score.create(req.body)
+    return res.status(201).json(score)
+  } catch (err) {
+    console.log(err)
+    return res.status(500).json({ err: err.message })
+  }
+}
+
+export { index, update, updateDown, add }
